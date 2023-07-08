@@ -1,0 +1,36 @@
+
+body {
+    display: none;
+    margin: 0%;
+    font-family: 'Heebo', sans-serif;
+    color: white;
+    user-select: none;
+    font-weight: 600;
+}
+  
+.location {
+    z-index: 999;
+    position: absolute;
+    left: 19%;
+    bottom: 5%;
+}
+
+.location .name {
+    position: absolute;
+    top: -32px;
+    left: 31px;
+    font-size: 2.5vh;
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+}
+
+.location .hr {
+    margin: 1vh 0vh 1vh 0vh;
+    filter: blur(0.1vh);
+    -webkit-filter: blur(0.1vh);
+    background-color: RGBA(0,0,0, 0.3);
+    width: 16vh;
+    padding: 0.3vh 0.2vh 0.3vh 0.2vh;
+    border-radius: 1vh;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+}
