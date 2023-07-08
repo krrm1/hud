@@ -1,5 +1,5 @@
 local speedMultiplier = 3.6 -- or 3.6
-local isChangeFPSChecked = '50'
+local fps = '50'
 
 local function SendUI(data)
     SendNUIMessage({
@@ -28,9 +28,9 @@ end
 
 CreateThread(function()
     while true do
-        if isChangeFPSChecked == '500'  then
+        if fps == '500'  then
             Wait(500)
-        elseif isChangeFPSChecked == '50' then
+        elseif fps == '50' then
             Wait(50)
         end
         local player = PlayerPedId()
