@@ -6,31 +6,57 @@ body {
     color: white;
     user-select: none;
     font-weight: 600;
-}
+ }
   
-.location {
+.hud {
     z-index: 999;
     position: absolute;
     left: 19%;
     bottom: 5%;
-}
+ }
 
-.location .name {
+.hud .vhud .speed {
     position: absolute;
-    top: -32px;
-    left: 31px;
-    font-size: 2.5vh;
+    top: -38px;
+    left: 37px;
+    font-size: 1.9vh;
     color: rgb(255, 255, 255);
     text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
-}
+ }
 
-.location .hr {
-    margin: 1vh 0vh 1vh 0vh;
-    filter: blur(0.1vh);
-    -webkit-filter: blur(0.1vh);
-    background-color: RGBA(0,0,0, 0.3);
-    width: 16vh;
-    padding: 0.3vh 0.2vh 0.3vh 0.2vh;
-    border-radius: 1vh;
+.hud .vhud .kmh {
+    position: absolute;
+    top: -13px;
+    left: 39px;
+    font-size: 1.0vh;
+    color: rgb(255, 255, 255);
     text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
-}
+ }
+
+.hud .vhud .pump {
+    position: absolute;
+    top: 7px;
+    left: -23px;
+    font-size: 1.9vh;
+    color: rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.8) 0px 0px 5px;
+ }
+
+.fuel .progress-bar {
+    position: absolute;
+    top: 14px;
+    left: 3px;
+    width: 100px;
+    height: 10px;
+    border: 1px solid #c6c6c64f;
+    border-radius: 3%;
+    background-color: #c6c6c680;
+    overflow: hidden;
+ }
+
+  .fuel .progress-bar .progress {
+    height: 100%;
+    background-color: #ffffff;
+    width: 0;
+    transition: width 0.5s ease-in-out;
+  }

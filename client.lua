@@ -1,17 +1,25 @@
-local speedMultiplier = 3.6 -- or 3.6
+local speedMultiplier = 3.6
 local fps = '50'
 
 local function SendUI(data)
     SendNUIMessage({
         event = data.event,
-        label = data.label
+        speed = data.speed,
+        fuel = data.fuel
     })
 end
 
-local function Updateinfo(data)
+local function VehSpeed(data)
     SendUI({
-        event = "SpawnLabel",
-        label = data
+        event = "VehSpeed",
+        speed = data
+    })
+end
+
+local function VehFuel(data)
+    SendUI({
+        event = "VehSpeed",
+        fuel = data
     })
 end
 
@@ -25,7 +33,6 @@ local function HideHud()
     SendUI({event = "HideUI"})
 end
 
-
 CreateThread(function()
     while true do
         if fps == '500'  then
@@ -38,13 +45,15 @@ CreateThread(function()
         if IsPedInAnyVehicle(player) and not IsThisModelABicycle(vehicle) then
             local vehicle = GetVehiclePedIsIn(player)
             local speed = math.ceil(GetEntitySpeed(vehicle) * speedMultiplier)
-        
+            local fuel = math.ceil(exports["LegacyFuel"]:GetFuel(vehicle))
+
             ShowHud()
-            Updateinfo(speed)
+            VehSpeed(speed)
+            VehFuel(fuel)
             Wait(0)
         elseif not IsPedInAnyVehicle(player) and not IsThisModelABicycle(vehicle) then
             HideHud()
-            Wait(1000)
+            Wait(1500)
         end
     end
 end)
