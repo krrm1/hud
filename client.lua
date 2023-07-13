@@ -45,7 +45,7 @@ CreateThread(function()
         if IsPedInAnyVehicle(player) and not IsThisModelABicycle(vehicle) then
             local vehicle = GetVehiclePedIsIn(player)
             local speed = math.ceil(GetEntitySpeed(vehicle) * speedMultiplier)
-            local fuel = math.ceil(exports["LegacyFuel"]:GetFuel(vehicle))
+            local fuel = math.ceil(GetVehicleFuelLevel(vehicle))
 
             ShowHud()
             VehSpeed(speed)
