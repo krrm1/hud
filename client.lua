@@ -1,5 +1,4 @@
 local speedMultiplier = 3.6
-local fps = '50'
 
 local function SendUI(data)
     SendNUIMessage({
@@ -35,14 +34,10 @@ end
 
 CreateThread(function()
     while true do
-        if fps == '500'  then
-            Wait(500)
-        elseif fps == '50' then
-            Wait(50)
-        end
         local player = PlayerPedId()
+        local vehicle = GetVehiclePedIsIn(player)
 
-        if IsPedInAnyVehicle(player) and not IsThisModelABicycle(vehicle) then
+        if IsPedInAnyVehicle(player) and GetIsVehicleEngineRunning(vehicle) then
             local vehicle = GetVehiclePedIsIn(player)
             local speed = math.ceil(GetEntitySpeed(vehicle) * speedMultiplier)
             local fuel = math.ceil(GetVehicleFuelLevel(vehicle))
@@ -51,9 +46,13 @@ CreateThread(function()
             VehSpeed(speed)
             VehFuel(fuel)
             Wait(0)
-        elseif not IsPedInAnyVehicle(player) and not IsThisModelABicycle(vehicle) then
+        elseif not IsPedInAnyVehicle(player) then
             HideHud()
-            Wait(1500)
+            Wait(1000)
+        elseif not GetIsVehicleEngineRunning(vehicle) then
+            HideHud()
+            Wait(1000)
         end
+        Wait(50)
     end
 end)
