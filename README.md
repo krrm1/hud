@@ -1,4 +1,4 @@
 - fivem hud
 
-![image](https://i.imgur.com/sB8KatL.jpeg)
-![image](https://i.imgur.com/q2HtUqz.jpeg)
+![image](https://i.imgur.com/NS1nIx5.jpeg)
+![image](https://i.imgur.com/eLBnT4I.jpeg)

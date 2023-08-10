@@ -12,20 +12,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 </head>
-<body>
-    <div class="hud">
-        <div class="vhud">
-            <span class="speed">000</span>
-            <span class="kmh">kmh</span>
-            <span class="pump"><i class='fas fa-gas-pump'></i></span>
-        </div>
-        <div class="fuel">
-            <div class="progress-bar">
-                <div class="progress" id="fuel-progress">
+    <body>
+        <div class="vehicle-hud">
+            <div class="vehicle-ui">
+                <span class="speed">000</span>
+                <span class="kmh">kmh</span>
+                <span class="pump"><i class='fas fa-gas-pump'></i></span>
+                <div class="progress-bar-hud style1">
+                    <div class="fuel" id="fuel-progress"></div>
+                </div>
+                <span class="engine"><i class="fas fa-oil-can"></i></span>
+                <div class="progress-bar-hud style2">
+                    <div class="engine" id="engine-progress"></div>
+                </div>
             </div>
         </div>
-    </div>
-    </div>
-    <script src="script.js"></script>
-</body>
+        <script src="script.js"></script>
+    </body>
 </html>

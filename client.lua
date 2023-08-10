@@ -1,35 +1,13 @@
 local speedMultiplier = 3.6
 
-local function SendUI(data)
-    SendNUIMessage({
-        event = data.event,
-        speed = data.speed,
-        fuel = data.fuel
-    })
-end
-
-local function VehSpeed(data)
-    SendUI({
-        event = "VehSpeed",
-        speed = data
-    })
-end
-
-local function VehFuel(data)
-    SendUI({
-        event = "VehSpeed",
-        fuel = data
-    })
-end
-
 local function ShowHud()
     SetNuiFocus(false, false)
-    SendUI({event = "ShowUI"})
+    SendNUIMessage({event = "ShowUI"})
 end
 
 local function HideHud()
     SetNuiFocus(false, false)
-    SendUI({event = "HideUI"})
+    SendNUIMessage({event = "HideUI"})
 end
 
 CreateThread(function()
@@ -41,11 +19,16 @@ CreateThread(function()
             local vehicle = GetVehiclePedIsIn(player)
             local speed = math.ceil(GetEntitySpeed(vehicle) * speedMultiplier)
             local fuel = math.ceil(GetVehicleFuelLevel(vehicle))
+            local engine = math.ceil(GetVehicleEngineHealth(vehicle)) / 10
 
             ShowHud()
-            VehSpeed(speed)
-            VehFuel(fuel)
-            Wait(0)
+            SendNUIMessage({
+                event = 'VehSpeed',
+                speed = speed,
+                fuel = fuel,
+                engine = engine
+            })
+            Wait(100)
         elseif not IsPedInAnyVehicle(player) then
             HideHud()
             Wait(1000)

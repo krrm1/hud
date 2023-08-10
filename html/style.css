@@ -1,62 +1,95 @@
 
 body {
-    display: none;
-    margin: 0%;
-    font-family: 'Heebo', sans-serif;
-    color: white;
-    user-select: none;
-    font-weight: 600;
- }
-  
-.hud {
-    z-index: 999;
-    position: absolute;
-    left: 19%;
-    bottom: 5%;
- }
+   display: show;
+   margin: 0%;
+   font-family: 'Heebo', sans-serif;
+   color: white;
+   user-select: none;
+   font-weight: 600;
+}
 
-.hud .vhud .speed {
-    position: absolute;
-    top: -38px;
-    left: 37px;
-    font-size: 1.9vh;
-    color: rgb(255, 255, 255);
-    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
- }
+.vehicle-hud {
+  z-index: 999;
+  position: absolute;
+  left: 19%;
+  bottom: 8%;
+}
 
-.hud .vhud .kmh {
-    position: absolute;
-    top: -13px;
-    left: 39px;
-    font-size: 1.0vh;
-    color: rgb(255, 255, 255);
-    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
- }
+.vehicle-hud .vehicle-ui .speed {
+   position: absolute;
+   top: -38px;
+   left: 37px;
+   font-size: 1.9vh;
+   color: rgb(255, 255, 255);
+   text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+}
 
-.hud .vhud .pump {
-    position: absolute;
-    top: 7px;
-    left: -23px;
-    font-size: 1.9vh;
-    color: rgb(255, 255, 255);
-    text-shadow: rgba(0, 0, 0, 0.8) 0px 0px 5px;
- }
+.vehicle-hud .vehicle-ui .kmh {
+   position: absolute;
+   top: -13px;
+   left: 39px;
+   font-size: 1.0vh;
+   color: rgb(255, 255, 255);
+   text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+}
 
-.fuel .progress-bar {
-    position: absolute;
-    top: 14px;
-    left: 3px;
-    width: 100px;
-    height: 10px;
-    border: 1px solid #c6c6c64f;
-    border-radius: 3%;
-    background-color: #c6c6c680;
-    overflow: hidden;
- }
+.vehicle-hud .vehicle-ui .pump {
+  position: absolute;
+  top: 3px;
+  left: -3px;
+  font-size: 1.50vh;
+  color: rgb(255, 255, 255);
+  filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.562));
+}
 
-  .fuel .progress-bar .progress {
-    height: 100%;
-    background-color: #ffffff;
-    width: 0;
-    transition: width 0.5s ease-in-out;
-  }
+.vehicle-hud .vehicle-ui .engine {
+  position: absolute;
+  top: 25px;
+  left: -7px;
+  font-size: 1.5vh;
+  color: rgb(255, 255, 255);
+  filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.562));
+}
+
+
+ .progress-bar-hud.style1 {
+  position: absolute;
+  top: -3px;
+  left: 7px;
+  width: 100px;
+  height: 10px;
+  background-color: #c6c6c680;
+  border-radius: 2px;
+  margin: 10px;
+}
+
+.progress-bar-hud.style1 .fuel {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 15%;
+  background-color: #ffffff;
+  border-radius: 2px;
+}
+
+.progress-bar-hud.style2 {
+  position: absolute;
+  top: 17px;
+  left: 7px;
+  width: 100px;
+  height: 10px;
+  background-color: #c6c6c680;
+  border-radius: 2px;
+  margin: 10px;
+}
+
+.progress-bar-hud.style2 .engine {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 15%;
+  background-color: #ffffff;
+  border-radius: 2px;
+}
